@@ -51,6 +51,23 @@ public class PracticaArrays {
         for (int i = 0; i < numeros.length; i++) {
             System.out.println(numeros[i]);
         }
+        
+        System.out.println("Anota número a buscar");
+        int num = sc.nextInt();
+        
+        int pos = buscar(numeros,num);
+        if (pos == -1)
+            System.out.println("El número no está");
+        else
+            System.out.println("El número está");
+        
+    }
+    public static int buscar(int n[], int num){
+        for (int i = 0; i < n.length; i++)
+            if (n[i]==num)
+                return i;
+        return -1;
+                    
     }
     
 }
