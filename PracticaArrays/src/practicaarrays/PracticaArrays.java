@@ -4,7 +4,9 @@
  * and open the template in the editor.
  */
 package practicaarrays;
+
 import java.util.*;
+
 /**
  *
  * @author Humberto
@@ -16,19 +18,33 @@ public class PracticaArrays {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        int numeros[] = new int [10];
+        int numeros[] = new int[10];
+        int numero;
         Scanner sc = new Scanner(System.in);
-        
-        for (int i = 0; i < numeros.length; i++){
+
+        for (int i = 0; i < numeros.length; i++) {
             System.out.println("Anota números");
-            numeros[i] = sc.nextInt();
+            numero = sc.nextInt();
+            boolean aceptado = true;
+            for (int j = 0; j < i; j++){
+                if (numero == numeros[j]){
+                    aceptado = false;
+                    break;
+                }
+            }
+            if (aceptado){
+                numeros[i] = numero;
+            } else {
+                System.out.println("Número repetido");
+                i--;
+            }  
         }
-        
+
         Arrays.sort(numeros);
         System.out.println("Los numeros ordenados serian: ");
-        for (int i = 0; i < numeros.length; i++){
-                System.out.println(numeros[i]);
-        }   
+        for (int i = 0; i < numeros.length; i++) {
+            System.out.println(numeros[i]);
+        }
     }
     
 }
