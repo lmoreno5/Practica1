@@ -19,13 +19,15 @@ public class PracticaArrays {
     public static void main(String[] args) {
         // TODO code application logic here
         int numero,elementos;
+        boolean permitido;
         Scanner sc = new Scanner(System.in);
         do{
             System.out.println("Anota cuantos números desea leer:");
             elementos = sc.nextInt();
-            if (elementos>10)
+            permitido = correcto(elementos);
+            if (!permitido)
                 System.out.println("El número de elementos tiene como máximo 10");
-        } while (elementos>10);
+        } while (!permitido);
         int numeros[] = new int[elementos];
         
         for (int i = 0; i < numeros.length; i++) {
@@ -51,6 +53,11 @@ public class PracticaArrays {
         for (int i = 0; i < numeros.length; i++) {
             System.out.println(numeros[i]);
         }
+    }
+    public static boolean correcto(int elementos){
+        if (elementos>10)
+            return false;
+        return true;
     }
     
 }
